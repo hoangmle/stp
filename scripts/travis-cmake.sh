@@ -158,9 +158,10 @@ if [ "$STP_CONFIG" = "KLEE" ]; then
     cd ../
 
     #klee
-    wget https://github.com/klee/klee/archive/v1.0.0.tar.gz
-    tar xzvf v1.0.0.tar.gz
-    cd klee-1.0.0
+    KLEE_VERSION=1.3.0
+    wget https://github.com/klee/klee/archive/v${KLEE_VERSION}.tar.gz
+    tar xzvf v${KLEE_VERSION}.tar.gz
+    cd klee-${KLEE_VERSION}
     ./configure --with-llvmsrc=/usr/lib/llvm-${LLVM_VERSION}/build \
         --with-llvmobj=/usr/lib/llvm-${LLVM_VERSION}/build \
         --with-llvmcc=${KLEE_CC} \
